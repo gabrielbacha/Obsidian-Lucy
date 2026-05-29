@@ -69,3 +69,10 @@ If you're modifying or contributing to the theme:
    - Update the version number in `manifest.json`.
    - Add the version mapping to `versions.json`.
    - Push a new [GitHub Release](https://github.com/gabrielbacha/Obsidian-Lucy/releases) with `manifest.json` and `theme.css` attached.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
