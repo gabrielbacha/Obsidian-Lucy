@@ -3,6 +3,8 @@
 A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md).
 
 ![Lucy Theme Showcase](Screenshot-1.png)
+![Lucy Theme Showcase](Screenshot-2.png)
+![Lucy Theme Showcase](Screenshot-3.png)
 
 ---
 
