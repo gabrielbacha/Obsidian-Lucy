@@ -72,13 +72,56 @@ body {
 }
 
 .theme-dark {
-  --h1-line-color: rgba(255, 255, 255, 0.28);
-  --h2-line-color: rgba(147, 206, 255, 0.92);
-  --h2-text-color: rgba(147, 206, 255, 0.92);
-  --h3-text-color: rgba(147, 206, 255, 0.8);
-  --h4-text-color: rgba(255, 255, 255, 0.92);
-  --h5-text-color: rgba(255, 255, 255, 0.72);
-  --h6-text-color: rgba(255, 255, 255, 0.62);
+  --h1-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(255, 255, 255, 0.15));
+  --h2-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(255, 255, 255, 0.2));
+
+  --h1-text-color: color-mix(in srgb, var(--color-accent) 65%, var(--color-base-100));
+  --h2-text-color: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
+  --h3-text-color: color-mix(in srgb, var(--color-accent) 100%, transparent);
+  --h4-text-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+  --h5-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-70));
+  --h6-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-60));
+
+  --code-normal: rgb(235, 95, 95);
+  --text-highlight-bg: rgba(255, 208, 0, 0.25);
+  --code-tag: var(--color-base-70);
+  --code-function: var(--color-base-70);
+  --list-marker-color: var(--color-base-50);
+
+  /* Links */
+  --text-accent: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
+
+  --link-color: var(--text-accent);
+  --link-color-hover: var(--text-accent-hover);
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: auto;
+  --link-weight: var(--font-weight);
+  --link-external-color: var(--text-accent);
+  --link-external-color-hover: var(--text-accent-hover);
+  --link-external-decoration: underline;
+  --link-external-decoration-hover: underline;
+  --link-external-filter: none;
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-opacity: 0.7;
+  --link-unresolved-filter: none;
+  --link-unresolved-decoration-style: solid;
+  --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.3);
+
+  --color-accent-rgb: 147, 206, 255;
+  --callout-default: var(--color-accent-rgb);
+  --callout-info: var(--color-accent-rgb);
+  --callout-todo: var(--color-accent-rgb);
+
+  --table-header-border-width: 0;
+  --table-header-bottom-border-width: 1.5px;
+  --table-header-bottom-border-color: var(--color-base-50);
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
+  --table-row-last-border-width: 0;
+  --table-edge-cell-padding-first: 0;
+  --table-edge-cell-padding-last: 0;
+  --table-cell-padding: 4px 10px;
 }
 
 .cm-strikethrough {
