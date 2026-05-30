@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-lucy",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A clean, spacious, Notion-inspired theme for clear thinking in Obsidian.",
 	"main": "theme.css",
 	"scripts": {
