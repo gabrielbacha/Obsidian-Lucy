@@ -42,6 +42,9 @@ Lucy is designed to remove visual noise, leaving you with a calm, well-structure
 
 ## 🚀 Installation
 
+> [!NOTE]
+> Lucy requires Obsidian **v1.0.0** or higher.
+
 ### Option 1: Community Themes (Recommended)
 
 1. Open **Settings** in Obsidian.
@@ -65,10 +68,16 @@ If you're modifying or contributing to the theme:
 
 1. Clone this repository into your vault's theme folder: `.obsidian/themes/Lucy`
 2. Run your developer tools or editor of choice. All styling is configured directly in `theme.css`.
-3. To draft a new version:
-   - Update the version number in `manifest.json`.
-   - Add the version mapping to `versions.json`.
-   - Push a new [GitHub Release](https://github.com/gabrielbacha/Obsidian-Lucy/releases) with `manifest.json` and `theme.css` attached.
+3. To draft and publish a new version:
+   - Run `npm run release` to automatically bump the patch version, update all configuration files (`manifest.json` and `versions.json`), create a Git commit and tag, and push them to GitHub.
+   - For custom version bumps (minor or major), run `npm version minor` or `npm version major`.
+   - The GitHub Actions workflow will automatically capture the pushed tag, create a new GitHub Release, and upload `manifest.json` and `theme.css` as release assets.
+
+---
+
+## 💬 Feedback & Support
+
+If you encounter any issues, have feature requests, or want to contribute improvements, please open an issue on the [GitHub repository](https://github.com/gabrielbacha/Obsidian-Lucy/issues).
 
 ---
 

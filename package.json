@@ -4,7 +4,9 @@
 	"description": "A clean, spacious, Notion-inspired theme for clear thinking in Obsidian.",
 	"main": "theme.css",
 	"scripts": {
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"postversion": "git push origin HEAD --follow-tags",
+		"release": "npm version patch"
 	},
 	"author": "Gabriel Bacha",
 	"license": "MIT"
