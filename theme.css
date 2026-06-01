@@ -33,7 +33,7 @@ body {
 
   --code-normal: rgb(235, 87, 87);
   --text-highlight-bg: rgba(255, 208, 0, 0.4);
-  --text-highlight-bright-bg: rgba(254, 254, 59, 0.884);
+  --text-highlight-bright-bg: rgba(249, 249, 95, 0.851);
   --code-tag: var(--color-base-70);
   --code-function: var(--color-base-70);
   --list-marker-color: var(--color-base-50);
@@ -432,11 +432,13 @@ body {
 .cm-comment-start {
   border-radius: 4px 0 0 4px;
   border-left: 4px solid;
+  margin-left: 10px;
 }
 
 .cm-comment-end {
   border-radius: 0 4px 4px 0;
   border-right: 4px solid;
+  margin-right: 10px;
 }
 
 /* Comment body */
