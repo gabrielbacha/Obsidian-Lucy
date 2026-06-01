@@ -31,6 +31,7 @@ body {
 
   --code-normal: rgb(235, 87, 87);
   --text-highlight-bg: rgba(255, 208, 0, 0.4);
+  --text-highlight-bright-bg: rgba(254, 254, 59, 0.884);
   --code-tag: var(--color-base-70);
   --code-function: var(--color-base-70);
   --list-marker-color: var(--color-base-50);
@@ -406,6 +407,37 @@ body {
 .cm-formatting-link,
 .cm-formatting-highlight {
   color: var(--list-marker-color) !important;
+}
+
+/* ===================================================
+   Comments
+   =================================================== */
+/* Comment markers %% - hide the text, keep the borders */
+.cm-comment-start,
+.cm-comment-end {
+  color: var(--list-marker-color) !important;
+  font-size: 10px;
+  border-radius: 4px;
+  border-color: color-mix(in srgb, var(--text-highlight-bright-bg) 55%, var(--color-base-100)) !important;
+  background-color: var(--text-highlight-bright-bg) !important;
+  padding: 11px 20px !important;
+  vertical-align: middle;
+}
+
+.cm-comment-start {
+  border-left: 4px solid;
+}
+
+.cm-comment-end {
+  border-right: 4px solid;
+}
+
+/* Comment body */
+.cm-comment {
+  background: var(--text-highlight-bright-bg);
+  color: var(--text-normal);
+  padding: 7px 0px;
+  vertical-align: middle;
 }
 
 /* ===================================================
