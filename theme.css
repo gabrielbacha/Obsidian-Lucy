@@ -415,7 +415,21 @@ body {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
+.view-header:hover .view-header-title-container,
 .view-header-title-container:focus-within {
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
 }
+
+/* ===================================================
+   Tab Container Background
+   =================================================== */
+
+/*.workspace-tab-header-container,
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+  background-color: rgba(207, 207, 207, 0.919);
+}
+
+.mod-top-right-space .workspace-tab-header {
+	border: 1px solid var(--color-base-50);
+  }*/
