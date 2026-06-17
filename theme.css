@@ -12,7 +12,8 @@
 
 body {
   /* Heading hierarchy tokens */
-  --p-spacing-empty: 5px;
+  --p-spacing-empty: 1px;
+  --p-spacing-empty-double: calc(var(--p-spacing-empty) * 2);
   --blockquote-border-inset: 7.5px;
   --comment-height: 30px;
 }
@@ -136,7 +137,7 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-line {
   position: relative;
-  padding-top: var(--p-spacing-empty);
+  padding-top: var(--p-spacing-empty-double);
   padding-bottom: var(--p-spacing-empty);
   padding-left: 0;
   padding-right: 0;
@@ -148,8 +149,8 @@ body {
   min-height: 8px;
   height: 8px;
   line-height: 8px;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-blank-line::after,
