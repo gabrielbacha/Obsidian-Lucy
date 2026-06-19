@@ -455,6 +455,20 @@ body {
   padding: 5.5px 0;
 }
 
+/* Inside headers: the fixed line-height + vertical padding above bleed
+   past the (tight, large-font) header line box and overlap wrapped rows.
+   Drop the vertical inflation so these spans flow within the header line. */
+.HyperMD-header .cm-comment,
+.HyperMD-header .cm-comment-start,
+.HyperMD-header .cm-comment-end,
+.HyperMD-header .cm-inline-code,
+.HyperMD-header .cm-highlight {
+  line-height: inherit;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  vertical-align: baseline;
+}
+
 /* ===================================================
    Title
    =================================================== */
