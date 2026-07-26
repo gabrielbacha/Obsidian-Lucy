@@ -1,0 +1,57 @@
+/*
+ * Lucy Light for Typora
+ * A faithful port of the Lucy theme for Obsidian.
+ */
+
+@import "./lucy/base.css";
+
+:root {
+	/* Public customization tokens */
+	--lucy-accent: #7c5ce7;
+	--lucy-content-width: 700px;
+	--lucy-font-size: 16px;
+
+	/* Lucy palette */
+	--lucy-background: #ffffff;
+	--lucy-background-secondary: #f7f7f7;
+	--lucy-background-modifier: #eeeeee;
+	--lucy-text: #2e3338;
+	--lucy-text-muted: #6f7378;
+	--lucy-base-100: #000000;
+	--lucy-base-70: #5c5c5c;
+	--lucy-base-60: #777777;
+	--lucy-base-50: #9b9b9b;
+	--lucy-selection: rgba(124, 92, 231, 0.2);
+	--lucy-highlight: rgba(255, 208, 0, 0.4);
+	--lucy-highlight-bright: rgba(249, 249, 95, 0.851);
+	--lucy-code: rgb(235, 87, 87);
+	--lucy-code-background: #f7f7f7;
+	--lucy-callout-strength: 53%;
+	--lucy-sidebar: #f6f6f6;
+	--lucy-sidebar-active: #e9e9e9;
+	--lucy-sidebar-hover: #eeeeee;
+	--lucy-border: rgba(70, 70, 70, 0.18);
+	--lucy-table-grid: rgba(70, 70, 70, 0.12);
+	--lucy-table-header: color-mix(in srgb, var(--lucy-background) 98%, var(--lucy-text));
+	--lucy-scrollbar: rgba(70, 70, 70, 0.24);
+	--lucy-comment-border: color-mix(in srgb, var(--lucy-highlight-bright) 55%, var(--lucy-base-100));
+	--lucy-callout: color-mix(
+		in srgb,
+		var(--lucy-accent) var(--lucy-callout-strength),
+		var(--lucy-base-100)
+	);
+
+	/* Typora application tokens */
+	--bg-color: var(--lucy-background);
+	--text-color: var(--lucy-text);
+	--select-text-bg-color: var(--lucy-selection);
+	--select-text-font-color: var(--lucy-text);
+	--side-bar-bg-color: var(--lucy-sidebar);
+	--control-text-color: var(--lucy-text-muted);
+	--primary-color: var(--lucy-accent);
+	--active-file-bg-color: var(--lucy-sidebar-active);
+	--active-file-text-color: var(--lucy-text);
+	--item-hover-bg-color: var(--lucy-sidebar-hover);
+	--item-hover-text-color: var(--lucy-text);
+	--window-border: 1px solid var(--lucy-border);
+}

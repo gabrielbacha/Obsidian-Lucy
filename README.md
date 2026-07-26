@@ -1,6 +1,6 @@
 # Lucy
 
-A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md).
+A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md) and [Typora](https://typora.io).
 
 ![Lucy Theme Showcase](Screenshot-1.png)
 ![Lucy Theme Showcase](Screenshot-2.png)
@@ -40,7 +40,7 @@ Lucy is designed to remove visual noise, leaving you with a calm, well-structure
 
 ---
 
-## 🚀 Installation
+## 🚀 Obsidian Installation
 
 > [!NOTE]
 > Lucy requires Obsidian **v1.0.0** or higher.
@@ -62,6 +62,19 @@ Lucy is designed to remove visual noise, leaving you with a calm, well-structure
 
 ---
 
+## ✍️ Typora Installation
+
+Lucy includes separate light and dark themes for Typora.
+
+1. Download `lucy-typora.zip` from the latest release and extract it.
+2. In Typora, open **Settings → Appearance → Open Theme Folder**.
+3. Copy `lucy-light.css`, `lucy-dark.css`, and the `lucy` directory into the theme folder.
+4. Restart Typora and select **Lucy Light** or **Lucy Dark** from the **Themes** menu.
+
+See the [Typora package documentation](typora/README.md) for appearance pairing, customization tokens, compatibility details, and the visual test fixture.
+
+---
+
 ## 🛠️ Development & Releases
 
 If you're modifying or contributing to the theme:
@@ -71,7 +84,7 @@ If you're modifying or contributing to the theme:
 3. To draft and publish a new version:
    - Run `npm run release` to automatically bump the patch version, update all configuration files (`manifest.json` and `versions.json`), create a Git commit and tag, and push them to GitHub.
    - For custom version bumps (minor or major), run `npm version minor` or `npm version major`.
-   - The GitHub Actions workflow will automatically capture the pushed tag, create a new GitHub Release, and upload `manifest.json` and `theme.css` as release assets.
+   - The GitHub Actions workflow will automatically capture the pushed tag, create a new GitHub Release, upload the Obsidian `manifest.json` and `theme.css` assets, and attach an install-ready `lucy-typora.zip`.
 
 ---
 
@@ -84,4 +97,3 @@ If you encounter any issues, have feature requests, or want to contribute improv
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-

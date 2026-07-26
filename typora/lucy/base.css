@@ -1,0 +1,894 @@
+/*
+ * Shared Lucy styles for Typora.
+ *
+ * Keep this file in the "lucy" directory beside lucy-light.css and
+ * lucy-dark.css. Palette values live in the two entrypoint stylesheets.
+ */
+
+:root {
+	/* Public customization token fallbacks */
+	--lucy-accent: #7c5ce7;
+	--lucy-content-width: 700px;
+	--lucy-font-size: 16px;
+
+	/* Internal fallbacks make the shared file safe to inspect in isolation. */
+	--lucy-background: #ffffff;
+	--lucy-background-secondary: #f7f7f7;
+	--lucy-background-modifier: #eeeeee;
+	--lucy-text: #2e3338;
+	--lucy-text-muted: #6f7378;
+	--lucy-base-100: #000000;
+	--lucy-base-70: #5c5c5c;
+	--lucy-base-60: #777777;
+	--lucy-base-50: #9b9b9b;
+	--lucy-selection: rgba(124, 92, 231, 0.2);
+	--lucy-highlight: rgba(255, 208, 0, 0.4);
+	--lucy-highlight-bright: rgba(249, 249, 95, 0.851);
+	--lucy-code: rgb(235, 87, 87);
+	--lucy-code-background: #f7f7f7;
+	--lucy-callout-strength: 53%;
+	--lucy-sidebar: #f6f6f6;
+	--lucy-sidebar-active: #e9e9e9;
+	--lucy-sidebar-hover: #eeeeee;
+	--lucy-border: rgba(70, 70, 70, 0.18);
+	--lucy-table-grid: rgba(70, 70, 70, 0.12);
+	--lucy-table-header: color-mix(in srgb, var(--lucy-background) 98%, var(--lucy-text));
+	--lucy-scrollbar: rgba(70, 70, 70, 0.24);
+	--lucy-comment-border: color-mix(in srgb, var(--lucy-highlight-bright) 55%, var(--lucy-base-100));
+	--lucy-callout: color-mix(
+		in srgb,
+		var(--lucy-accent) var(--lucy-callout-strength),
+		var(--lucy-base-100)
+	);
+
+	/* Heading hierarchy */
+	--lucy-h1-line: color-mix(in srgb, var(--lucy-accent) 10%, var(--lucy-border));
+	--lucy-h2-line: color-mix(in srgb, var(--lucy-accent) 10%, var(--lucy-base-50));
+	--lucy-h1-text: color-mix(in srgb, var(--lucy-accent) 65%, var(--lucy-base-100));
+	--lucy-h2-text: color-mix(in srgb, var(--lucy-accent) 85%, var(--lucy-base-100));
+	--lucy-h3-text: var(--lucy-accent);
+	--lucy-h4-text: color-mix(in srgb, var(--lucy-accent) 70%, transparent);
+	--lucy-h5-text: color-mix(in srgb, var(--lucy-accent) 25%, var(--lucy-base-70));
+	--lucy-h6-text: color-mix(in srgb, var(--lucy-accent) 25%, var(--lucy-base-60));
+
+	--monospace: "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* ===================================================
+   DOCUMENT CANVAS
+   =================================================== */
+
+html {
+	font-size: var(--lucy-font-size);
+	background: var(--lucy-background);
+	color: var(--lucy-text);
+	-webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu, sans-serif;
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+
+body,
+content {
+	background: var(--lucy-background);
+	color: var(--lucy-text);
+}
+
+content {
+	overflow-x: hidden;
+}
+
+#write {
+	box-sizing: border-box;
+	width: calc(100% - 48px);
+	max-width: var(--lucy-content-width);
+	margin: 0 auto;
+	padding: 36px 0 80px;
+	color: var(--lucy-text);
+	overflow: visible;
+}
+
+#write p,
+#write li,
+#write blockquote {
+	text-wrap: pretty;
+}
+
+#write p {
+	margin: 0.7em 0;
+}
+
+::selection,
+.in-text-selection {
+	background: var(--lucy-selection);
+	color: var(--lucy-text);
+	text-shadow: none;
+}
+
+/* ===================================================
+   HEADINGS
+   =================================================== */
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+	margin-top: 0;
+	position: relative;
+	text-wrap: balance;
+	text-transform: none;
+}
+
+#write h1 {
+	margin-bottom: 0;
+	padding: 24px 0 18px;
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 1.3;
+	color: var(--lucy-h1-text);
+}
+
+#write h1::before,
+#write h1::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	width: 100vw;
+	transform: translateX(-50%);
+	border-top: 2px solid var(--lucy-h1-line);
+	pointer-events: none;
+}
+
+#write h1::before {
+	top: 12px;
+}
+
+#write h1::after {
+	bottom: 12px;
+}
+
+#write h2 {
+	margin-bottom: 12px;
+	padding: 22px 0 6px;
+	border-bottom: 2px solid var(--lucy-h2-line);
+	font-size: 1.8rem;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--lucy-h2-text);
+}
+
+#write h3 {
+	margin-bottom: 0;
+	padding: 20px 0 6px;
+	font-size: 1.6rem;
+	font-weight: 550;
+	line-height: 1.3;
+	color: var(--lucy-h3-text);
+}
+
+#write h4 {
+	margin-bottom: 0;
+	padding: 18px 0 4px;
+	font-size: 1.4rem;
+	font-weight: 550;
+	line-height: 1.3;
+	color: var(--lucy-h4-text);
+}
+
+#write h5 {
+	margin-bottom: 0;
+	padding: 16px 0 4px;
+	font-size: 1.15rem;
+	font-weight: 550;
+	line-height: 1.3;
+	color: var(--lucy-h5-text);
+}
+
+#write h6 {
+	margin-bottom: 0;
+	padding: 12px 0 4px;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--lucy-h6-text);
+}
+
+/* ===================================================
+   EMPTY LINES AND MARKDOWN MARKERS
+   =================================================== */
+
+body:not(.typora-export) #write p:has(> br:only-child) {
+	height: 8px;
+	min-height: 8px;
+	margin: 12px 0;
+	line-height: 8px;
+}
+
+body:not(.typora-export) #write p:has(> br:only-child)::before {
+	content: "¬";
+	position: absolute;
+	top: 50%;
+	left: -8px;
+	transform: translateY(-50%);
+	color: color-mix(in srgb, var(--lucy-base-50) 30%, transparent);
+	font-size: 0.8em;
+	line-height: 1;
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.md-meta,
+.md-before,
+.md-after,
+.md-header-span .md-meta,
+.md-expand .md-meta {
+	color: var(--lucy-base-50) !important;
+	text-shadow: none !important;
+}
+
+#write del,
+#write s,
+.cm-strikethrough {
+	color: var(--lucy-base-50);
+}
+
+/* Typora renders HTML comments as a single .md-comment span. */
+.md-comment {
+	box-sizing: border-box;
+	padding: 5.5px 8px;
+	border-right: 4px solid var(--lucy-comment-border);
+	border-left: 4px solid var(--lucy-comment-border);
+	border-radius: 4px;
+	background: var(--lucy-highlight-bright);
+	color: var(--lucy-text);
+	font-family: inherit;
+	line-height: 30px;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+#write h1 .md-comment,
+#write h2 .md-comment,
+#write h3 .md-comment,
+#write h4 .md-comment,
+#write h5 .md-comment,
+#write h6 .md-comment,
+#write h1 mark,
+#write h2 mark,
+#write h3 mark,
+#write h4 mark,
+#write h5 mark,
+#write h6 mark {
+	padding-top: 0;
+	padding-bottom: 0;
+	line-height: inherit;
+	vertical-align: baseline;
+}
+
+/* ===================================================
+   INLINE CONTENT
+   =================================================== */
+
+#write a {
+	color: var(--lucy-h2-text);
+	font-weight: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: auto;
+	text-underline-offset: 0.12em;
+}
+
+#write a:hover,
+#write a:focus-visible {
+	color: var(--lucy-h3-text);
+}
+
+#write code,
+#write tt {
+	padding: 0.1em 0.28em;
+	border-radius: 3px;
+	background: var(--lucy-code-background);
+	color: var(--lucy-code);
+	font-family: var(--monospace);
+	font-size: 0.9em;
+}
+
+#write mark {
+	padding: 0 0.08em;
+	background: var(--lucy-highlight);
+	color: inherit;
+}
+
+#write kbd {
+	padding: 0.12em 0.4em;
+	border: 1px solid var(--lucy-border);
+	border-radius: 3px;
+	background: var(--lucy-background-secondary);
+	box-shadow: 0 1px 0 var(--lucy-border);
+	color: var(--lucy-text);
+	font-family: var(--monospace);
+	font-size: 0.8em;
+}
+
+#write img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 3px;
+}
+
+#write video,
+#write iframe,
+#write svg {
+	max-width: 100%;
+}
+
+#write hr {
+	height: 1px;
+	margin: 2em 0;
+	border: 0;
+	background: var(--lucy-border);
+}
+
+/* ===================================================
+   LISTS AND TASKS
+   =================================================== */
+
+#write ul,
+#write ol {
+	margin: 0.45em 0;
+	padding-left: 1.75em;
+}
+
+#write li {
+	margin: 0;
+	padding: 2px 0 2px 8px;
+}
+
+#write li::marker {
+	color: var(--lucy-base-50);
+	font-variant-numeric: tabular-nums;
+}
+
+#write li > p {
+	margin: 0;
+}
+
+/* Cycles every three indentation levels: disc → circle → square. */
+#write ul {
+	list-style-type: disc;
+}
+
+#write :is(ul, ol) > li > ul {
+	list-style-type: circle;
+}
+
+#write :is(ul, ol) > li > :is(ul, ol) > li > ul {
+	list-style-type: square;
+}
+
+#write :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > ul {
+	list-style-type: disc;
+}
+
+#write :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > ul {
+	list-style-type: circle;
+}
+
+#write
+	:is(ul, ol)
+	> li
+	> :is(ul, ol)
+	> li
+	> :is(ul, ol)
+	> li
+	> :is(ul, ol)
+	> li
+	> :is(ul, ol)
+	> li
+	> ul {
+	list-style-type: square;
+}
+
+#write .md-task-list-item {
+	padding-left: 8px;
+}
+
+#write .md-task-list-item > input {
+	width: 15px;
+	height: 15px;
+	margin-top: calc(0.75em - 7px);
+	margin-left: -1.45em;
+	border: 1.5px solid var(--lucy-base-50);
+	border-radius: 3px;
+	background: var(--lucy-background);
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+#write .md-task-list-item > input:focus-visible {
+	outline: 2px solid var(--lucy-accent);
+	outline-offset: 2px;
+}
+
+#write .md-task-list-item > input:checked,
+#write .md-task-list-item > input[checked] {
+	border-color: var(--lucy-callout);
+	background: var(--lucy-callout);
+}
+
+#write .md-task-list-item > input:checked::after,
+#write .md-task-list-item > input[checked]::after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	width: 4px;
+	height: 7px;
+	border-right: 2px solid var(--lucy-background);
+	border-bottom: 2px solid var(--lucy-background);
+	transform: rotate(40deg);
+}
+
+/* ===================================================
+   BLOCKQUOTES AND ALERTS
+   =================================================== */
+
+#write blockquote {
+	margin: 0.75em 0;
+	padding: 0 0 0 12px;
+	border-left: 2px solid var(--lucy-accent);
+	color: var(--lucy-text);
+}
+
+#write blockquote > :first-child {
+	margin-top: 0;
+}
+
+#write blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+#write blockquote + blockquote {
+	margin-top: -0.75em;
+	padding-top: 0.75em;
+}
+
+#write blockquote blockquote {
+	margin-left: 0;
+}
+
+#write .md-alert {
+	margin: 0.9em 0;
+	padding: 0 0 0 12px;
+	border-left: 3px solid var(--lucy-callout);
+	color: inherit;
+}
+
+#write .md-alert-text {
+	color: var(--lucy-h2-text);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+#write .md-alert-text svg {
+	fill: currentColor;
+}
+
+/* ===================================================
+   TABLES
+   =================================================== */
+
+#write figure {
+	margin: 1em 0;
+}
+
+#write table {
+	width: auto;
+	max-width: 100%;
+	margin: 0;
+	border: 0;
+	border-collapse: collapse;
+	background: transparent;
+	font-variant-numeric: tabular-nums;
+}
+
+#write table th,
+#write table td {
+	padding: 4px 10px;
+	border: 0;
+	border-right: 1px solid var(--lucy-table-grid);
+	background: transparent;
+	text-align: left;
+	vertical-align: top;
+}
+
+#write table th:last-child,
+#write table td:last-child {
+	border-right: 0;
+}
+
+#write table thead th {
+	border-bottom: 1.5px solid var(--lucy-base-50);
+	background: var(--lucy-table-header);
+	font-weight: 650;
+}
+
+#write table tbody tr:hover td {
+	background: var(--lucy-background-secondary);
+}
+
+.ty-table-edit {
+	border: 1px solid var(--lucy-border);
+	background: var(--lucy-background-secondary);
+	color: var(--lucy-text);
+}
+
+/* ===================================================
+   CODE FENCES, SOURCE MODE, AND RAW BLOCKS
+   =================================================== */
+
+#write pre:not(.md-meta-block),
+#write .md-fences {
+	margin: 0.9em 0;
+	padding: 12px 14px;
+	border: 0;
+	border-radius: 3px;
+	background: var(--lucy-code-background);
+	color: var(--lucy-text);
+	font-family: var(--monospace);
+	font-size: 0.88rem;
+	line-height: 1.55;
+	overflow-x: auto;
+	white-space: pre;
+}
+
+#write pre:not(.md-meta-block) > code {
+	padding: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	font-size: inherit;
+}
+
+#write .sourceCode .kw,
+#write .sourceCode .cf,
+#write .sourceCode .op {
+	color: var(--lucy-code);
+}
+
+#write .sourceCode .st,
+#write .sourceCode .vs,
+#write .sourceCode .ss {
+	color: color-mix(in srgb, var(--lucy-accent) 68%, #2aa866);
+}
+
+#write .sourceCode .fu,
+#write .sourceCode .va,
+#write .sourceCode .dt {
+	color: var(--lucy-h3-text);
+}
+
+#write .sourceCode .co {
+	color: var(--lucy-text-muted);
+}
+
+.md-fences .CodeMirror,
+.md-fences .CodeMirror-scroll,
+.md-fences .CodeMirror-gutters,
+.cm-s-inner {
+	background: var(--lucy-code-background) !important;
+	color: var(--lucy-text);
+}
+
+.md-fences .CodeMirror-gutters {
+	border-right-color: var(--lucy-border);
+}
+
+.cm-s-inner .cm-comment {
+	color: var(--lucy-text-muted);
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-number {
+	color: var(--lucy-h4-text);
+}
+
+.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-builtin {
+	color: var(--lucy-code);
+}
+
+.cm-s-inner .cm-string,
+.cm-s-inner .cm-string-2 {
+	color: color-mix(in srgb, var(--lucy-accent) 68%, #2aa866);
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-def {
+	color: var(--lucy-h3-text);
+}
+
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-meta {
+	color: var(--lucy-h5-text);
+}
+
+pre.md-meta-block,
+.md-rawblock-control,
+.md-rawblock-tooltip,
+.md-math-container {
+	border: 0;
+	border-radius: 3px;
+	background: var(--lucy-background-secondary) !important;
+	color: var(--lucy-text-muted);
+}
+
+#typora-source {
+	background: var(--lucy-background);
+	color: var(--lucy-text);
+	font-family: var(--monospace);
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+
+#typora-source .CodeMirror,
+#typora-source .CodeMirror-scroll,
+#typora-source .CodeMirror-gutters {
+	background: var(--lucy-background);
+	color: var(--lucy-text);
+}
+
+#typora-source .cm-header,
+#typora-source .cm-link {
+	color: var(--lucy-h3-text);
+}
+
+#typora-source .cm-formatting,
+#typora-source .cm-comment,
+#typora-source .cm-quote,
+#typora-source .cm-hr {
+	color: var(--lucy-base-50);
+}
+
+#typora-source .CodeMirror-activeline-background {
+	background: var(--lucy-background-secondary);
+}
+
+/* ===================================================
+   TYPORA APPLICATION CHROME
+   =================================================== */
+
+#top-titlebar,
+#top-titlebar *,
+header,
+footer.ty-footer {
+	background: var(--lucy-background);
+	color: var(--lucy-text-muted);
+}
+
+#top-titlebar .title-text,
+#top-titlebar #title-text {
+	opacity: 0;
+	transition: opacity 100ms ease-out;
+}
+
+#top-titlebar:hover .title-text,
+#top-titlebar:hover #title-text,
+#top-titlebar:focus-within .title-text,
+#top-titlebar:focus-within #title-text {
+	opacity: 1;
+}
+
+footer.ty-footer {
+	border-color: var(--lucy-border);
+}
+
+.footer-btn:hover,
+#footer-word-count:hover,
+#outline-btn:hover,
+.toolbar-icon.btn:hover {
+	background: var(--lucy-sidebar-hover) !important;
+	color: var(--lucy-text) !important;
+}
+
+#typora-sidebar {
+	border-right: 1px solid var(--lucy-border);
+	background: var(--lucy-sidebar);
+	color: var(--lucy-text-muted);
+}
+
+.sidebar-tabs,
+.sidebar-footer {
+	border-color: var(--lucy-border);
+	background: var(--lucy-sidebar);
+}
+
+.outline-item,
+.file-node-content,
+.file-list-item {
+	color: var(--lucy-text-muted);
+}
+
+.outline-item:hover,
+.outline-item-active,
+.file-library-file-node:hover .file-node-background,
+.file-library-file-node.active .file-node-background,
+#file-library-list .file-list-item:hover,
+#file-library-list .file-list-item.active,
+#file-library-search-result .ty-search-item:hover,
+#file-library-search-result .ty-search-item.active {
+	border-color: transparent;
+	background: var(--lucy-sidebar-hover);
+	color: var(--lucy-text);
+}
+
+.outline-item-active,
+.file-library-file-node.active .file-node-background,
+#file-library-list .file-list-item.active,
+#file-library-search-result .ty-search-item.active {
+	background: var(--lucy-sidebar-active);
+}
+
+.outline-label,
+.file-node-title,
+.file-list-item-file-name,
+.ty-search-item {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.modal-content,
+.context-menu,
+.dropdown-menu,
+.megamenu-content,
+.megamenu-menu {
+	border-color: var(--lucy-border);
+	background: var(--lucy-background);
+	color: var(--lucy-text);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal input,
+.modal textarea,
+.modal select,
+#file-library-search-input {
+	border-color: var(--lucy-border);
+	background: var(--lucy-background-secondary);
+	color: var(--lucy-text);
+}
+
+.modal input:focus,
+.modal textarea:focus,
+.modal select:focus,
+#file-library-search-input:focus {
+	border-color: var(--lucy-accent);
+	outline: 2px solid color-mix(in srgb, var(--lucy-accent) 35%, transparent);
+	outline-offset: 1px;
+	box-shadow: none;
+}
+
+.dropdown-menu > li > a,
+.context-menu > li > a {
+	color: inherit;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.context-menu > li > a:hover,
+.context-menu > li > a:focus {
+	background: var(--lucy-sidebar-hover);
+	color: var(--lucy-text);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 3px solid transparent;
+	border-radius: 10px;
+	background: var(--lucy-scrollbar);
+	background-clip: padding-box;
+}
+
+/* Keep Typora's focus mode quiet while preserving the focused block. */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container),
+.on-focus-mode li[cid]:not(.md-focus-container) {
+	opacity: 0.35;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+	opacity: 1;
+}
+
+/* ===================================================
+   RESPONSIVE, REDUCED MOTION, EXPORT, AND PRINT
+   =================================================== */
+
+@media screen and (max-width: 760px) {
+	#write {
+		width: calc(100% - 40px);
+		padding-top: 24px;
+		padding-bottom: 56px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#top-titlebar .title-text,
+	#top-titlebar #title-text {
+		transition: none;
+	}
+}
+
+.typora-export #write {
+	width: min(100%, var(--lucy-content-width));
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.typora-export #write h1::before,
+.typora-export #write h1::after {
+	left: 0;
+	width: 100%;
+	transform: none;
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+
+	html,
+	body,
+	.typora-export {
+		background: var(--lucy-background);
+		color: var(--lucy-text);
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	#write {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#write h1::before,
+	#write h1::after {
+		left: 0;
+		width: 100%;
+		transform: none;
+	}
+
+	#write pre:not(.md-meta-block),
+	#write .md-fences {
+		overflow-x: visible;
+		white-space: pre-wrap;
+		overflow-wrap: anywhere;
+	}
+
+	body:not(.typora-export) #write p:has(> br:only-child)::before {
+		display: none;
+	}
+
+	#top-titlebar,
+	#typora-sidebar,
+	footer.ty-footer {
+		display: none !important;
+	}
+}

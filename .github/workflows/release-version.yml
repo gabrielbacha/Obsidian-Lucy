@@ -19,6 +19,9 @@ jobs:
         run: |
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+      - name: Bundle Typora theme
+        working-directory: typora
+        run: zip -r ../lucy-typora.zip lucy-light.css lucy-dark.css lucy README.md
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -50,3 +53,13 @@ jobs:
           asset_path: ./theme.css
           asset_name: theme.css
           asset_content_type: text/css
+      - name: Upload Typora theme
+        id: upload-typora
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./lucy-typora.zip
+          asset_name: lucy-typora.zip
+          asset_content_type: application/zip
