@@ -336,6 +336,36 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
+/* Keep inline code red when the surrounding heading sets its own text color. */
+.cm-editor .cm-line.HyperMD-header .cm-inline-code:not(.cm-formatting-code),
+.markdown-rendered :is(h1, h2, h3, h4, h5, h6) code {
+  color: var(--code-normal);
+}
+
+/* Obsidian's callout color token requires RGB channels, so style the default
+   note callout directly to keep it in sync with the active accent color. */
+.callout[data-callout="note"] {
+  --bases-table-header-background-hover: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --bases-embed-border-color: color-mix(
+    in srgb,
+    var(--color-accent) 25%,
+    var(--background-primary) 50%
+  );
+  --bases-table-border-color: color-mix(
+    in srgb,
+    var(--color-accent) 25%,
+    var(--background-primary) 50%
+  );
+  --table-border-color: color-mix(in srgb, var(--color-accent) 25%, var(--background-primary) 50%);
+  border-color: hsla(var(--color-accent-hsl), var(--callout-border-opacity));
+  background-color: hsla(var(--color-accent-hsl), 0.1);
+}
+
+.callout[data-callout="note"] > .callout-title,
+.callout[data-callout="note"] > .callout-title .callout-icon .svg-icon {
+  color: var(--color-accent);
+}
+
 /* ===================================================
    READING VIEW OTHER
    =================================================== */

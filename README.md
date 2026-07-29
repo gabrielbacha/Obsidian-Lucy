@@ -1,6 +1,6 @@
 # Lucy
 
-A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md) and [Typora](https://typora.io).
+A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md), [Typora](https://typora.io), and [Zed](https://zed.dev).
 
 ![Lucy Theme Showcase](Screenshot-1.png)
 ![Lucy Theme Showcase](Screenshot-2.png)
@@ -75,6 +75,19 @@ See the [Typora package documentation](typora/README.md) for appearance pairing,
 
 ---
 
+## 💻 Zed Installation
+
+Lucy includes a native light/dark theme family for Zed's application chrome, editor, syntax highlighting, terminal, diagnostics, and Git states.
+
+1. Download `lucy-zed.zip` from the latest release and extract it.
+2. Copy `lucy.json` into Zed's local themes directory at `~/.config/zed/themes` on macOS or Linux, or `%USERPROFILE%\AppData\Roaming\Zed\themes\` on Windows.
+3. Reload Zed.
+4. Open the theme selector with `cmd-k cmd-t` on macOS or `ctrl-k ctrl-t` on Linux and Windows, then select **Lucy Light** or **Lucy Dark**.
+
+See the [Zed package documentation](zed/README.md) for automatic light/dark pairing, optional font settings, and the exact scope of the port.
+
+---
+
 ## 🛠️ Development & Releases
 
 If you're modifying or contributing to the theme:
@@ -84,7 +97,7 @@ If you're modifying or contributing to the theme:
 3. To draft and publish a new version:
    - Run `npm run release` to automatically bump the patch version, update all configuration files (`manifest.json` and `versions.json`), create a Git commit and tag, and push them to GitHub.
    - For custom version bumps (minor or major), run `npm version minor` or `npm version major`.
-   - The GitHub Actions workflow will automatically capture the pushed tag, create a new GitHub Release, upload the Obsidian `manifest.json` and `theme.css` assets, and attach an install-ready `lucy-typora.zip`.
+   - The GitHub Actions workflow will automatically capture the pushed tag, create a new GitHub Release, upload the Obsidian `manifest.json` and `theme.css` assets, and attach install-ready `lucy-typora.zip` and `lucy-zed.zip` packages.
 
 ---
 

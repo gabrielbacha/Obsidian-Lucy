@@ -22,6 +22,9 @@ jobs:
       - name: Bundle Typora theme
         working-directory: typora
         run: zip -r ../lucy-typora.zip lucy-light.css lucy-dark.css lucy README.md
+      - name: Bundle Zed theme
+        working-directory: zed
+        run: zip -r ../lucy-zed.zip lucy.json README.md
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -62,4 +65,14 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./lucy-typora.zip
           asset_name: lucy-typora.zip
+          asset_content_type: application/zip
+      - name: Upload Zed theme
+        id: upload-zed
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./lucy-zed.zip
+          asset_name: lucy-zed.zip
           asset_content_type: application/zip
