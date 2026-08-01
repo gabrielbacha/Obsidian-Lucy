@@ -3,7 +3,7 @@
  * A clean, spacious, Notion-inspired theme for clear thinking
  *
  * Author: Gabriel
- * Version: 1.0.5
+ * Version: 1.0.6
  */
 
 /* ===================================================
@@ -133,12 +133,6 @@ body {
 /* ===================================================
    EDITOR SPACING (LIVE PREVIEW)
    =================================================== */
-
-.markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-blank-line,
-.markdown-source-view.mod-cm6 .cm-content .cm-line:empty,
-.markdown-source-view.mod-cm6 .cm-content .cm-line:has(br:only-child) {
-  line-height: 8px;
-}
 
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-blank-line::after,
 .markdown-source-view.mod-cm6 .cm-content .cm-line:has(br:only-child)::after {
