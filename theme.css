@@ -11,9 +11,10 @@
    =================================================== */
 
 body {
-  /* Heading hierarchy tokens */
-  --p-spacing-empty: 1px;
-  --p-spacing-empty-double: calc(var(--p-spacing-empty) * 2);
+  /* Heading hierarchy tokens. Named --lucy-* on purpose: --p-spacing-empty is an
+     Obsidian core variable and redefining it here would retune core's own rules. */
+  --lucy-line-pad: 1px;
+  --lucy-line-pad-double: calc(var(--lucy-line-pad) * 2);
   --blockquote-border-inset: 7.5px;
   --comment-height: 30px;
 }
@@ -21,15 +22,15 @@ body {
 .theme-light {
   /*--color-accent: var(--color-green);*/
 
-  --h1-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(70, 70, 70, 0.3));
-  --h2-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(150, 150, 150, 0.5));
+  --h1-line-color: color-mix(in oklch, var(--color-accent) 10%, rgba(70, 70, 70, 0.3));
+  --h2-line-color: color-mix(in oklch, var(--color-accent) 10%, rgba(150, 150, 150, 0.5));
 
-  --h1-text-color: color-mix(in srgb, var(--color-accent) 65%, var(--color-base-100));
-  --h2-text-color: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
-  --h3-text-color: color-mix(in srgb, var(--color-accent) 100%, transparent);
-  --h4-text-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
-  --h5-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-70));
-  --h6-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-60));
+  --h1-text-color: color-mix(in oklch, var(--color-accent) 65%, var(--color-base-100));
+  --h2-text-color: color-mix(in oklch, var(--color-accent) 85%, var(--color-base-100));
+  --h3-text-color: var(--color-accent);
+  --h4-text-color: color-mix(in oklch, var(--color-accent) 70%, transparent);
+  --h5-text-color: color-mix(in oklch, var(--color-accent) 25%, var(--color-base-70));
+  --h6-text-color: color-mix(in oklch, var(--color-accent) 25%, var(--color-base-60));
 
   --code-normal: rgb(235, 87, 87);
   --text-highlight-bg: rgba(255, 208, 0, 0.4);
@@ -39,7 +40,7 @@ body {
   --list-marker-color: var(--color-base-50);
 
   /* Links */
-  --text-accent: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
+  --text-accent: color-mix(in oklch, var(--color-accent) 85%, var(--color-base-100));
 
   --link-color: var(--text-accent);
   --link-color-hover: var(--text-accent-hover);
@@ -56,12 +57,12 @@ body {
   --link-unresolved-opacity: 0.7;
   --link-unresolved-filter: none;
   --link-unresolved-decoration-style: solid;
-  --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.3);
+  --link-unresolved-decoration-color: color-mix(in oklch, var(--interactive-accent) 30%, transparent);
 
-  --color-accent-rgb: 65, 37, 131;
-  --callout-default: var(--color-accent-rgb);
-  --callout-info: var(--color-accent-rgb);
-  --callout-todo: var(--color-accent-rgb);
+  /* Callout type colors take a full CSS color as of Obsidian 1.13. */
+  --callout-default: var(--color-accent);
+  --callout-info: #412583;
+  --callout-todo: #412583;
 
   --table-header-border-width: 0;
   --table-header-bottom-border-width: 1.5px;
@@ -72,20 +73,20 @@ body {
   --table-edge-cell-padding-first: 0;
   --table-edge-cell-padding-last: 0;
   --table-cell-padding: 4px 10px;
-  --table-header-background: color-mix(in srgb, var(--background-primary) 98%, var(--text-normal));
-  /*--table-cell-background: color-mix(in srgb, var(--background-primary) 97%, var(--text-normal));*/
+  --table-header-background: color-mix(in oklch, var(--background-primary) 98%, var(--text-normal));
+  /*--table-cell-background: color-mix(in oklch, var(--background-primary) 97%, var(--text-normal));*/
 }
 
 .theme-dark {
-  --h1-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(255, 255, 255, 0.15));
-  --h2-line-color: color-mix(in srgb, var(--color-accent) 10%, rgba(255, 255, 255, 0.2));
+  --h1-line-color: color-mix(in oklch, var(--color-accent) 10%, rgba(255, 255, 255, 0.15));
+  --h2-line-color: color-mix(in oklch, var(--color-accent) 10%, rgba(255, 255, 255, 0.2));
 
-  --h1-text-color: color-mix(in srgb, var(--color-accent) 65%, var(--color-base-100));
-  --h2-text-color: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
-  --h3-text-color: color-mix(in srgb, var(--color-accent) 100%, transparent);
-  --h4-text-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
-  --h5-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-70));
-  --h6-text-color: color-mix(in srgb, var(--color-accent) 25%, var(--color-base-60));
+  --h1-text-color: color-mix(in oklch, var(--color-accent) 65%, var(--color-base-100));
+  --h2-text-color: color-mix(in oklch, var(--color-accent) 85%, var(--color-base-100));
+  --h3-text-color: var(--color-accent);
+  --h4-text-color: color-mix(in oklch, var(--color-accent) 70%, transparent);
+  --h5-text-color: color-mix(in oklch, var(--color-accent) 25%, var(--color-base-70));
+  --h6-text-color: color-mix(in oklch, var(--color-accent) 25%, var(--color-base-60));
 
   --code-normal: rgb(235, 95, 95);
   --text-highlight-bg: rgba(255, 208, 0, 0.25);
@@ -94,7 +95,7 @@ body {
   --list-marker-color: var(--color-base-50);
 
   /* Links */
-  --text-accent: color-mix(in srgb, var(--color-accent) 85%, var(--color-base-100));
+  --text-accent: color-mix(in oklch, var(--color-accent) 85%, var(--color-base-100));
 
   --link-color: var(--text-accent);
   --link-color-hover: var(--text-accent-hover);
@@ -111,12 +112,12 @@ body {
   --link-unresolved-opacity: 0.7;
   --link-unresolved-filter: none;
   --link-unresolved-decoration-style: solid;
-  --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.3);
+  --link-unresolved-decoration-color: color-mix(in oklch, var(--interactive-accent) 30%, transparent);
 
-  --color-accent-rgb: 147, 206, 255;
-  --callout-default: var(--color-accent-rgb);
-  --callout-info: var(--color-accent-rgb);
-  --callout-todo: var(--color-accent-rgb);
+  /* Callout type colors take a full CSS color as of Obsidian 1.13. */
+  --callout-default: var(--color-accent);
+  --callout-info: #93ceff;
+  --callout-todo: #93ceff;
 
   --table-header-border-width: 0;
   --table-header-bottom-border-width: 1.5px;
@@ -127,8 +128,8 @@ body {
   --table-edge-cell-padding-first: 0;
   --table-edge-cell-padding-last: 0;
   --table-cell-padding: 4px 10px;
-  --table-header-background: color-mix(in srgb, var(--background-primary) 85%, var(--text-normal)); /*OPTIONAL*/
-  /*--table-cell-background: color-mix(in srgb, var(--background-primary) 95%, var(--text-normal));*/ /*OPTIONAL*/
+  --table-header-background: color-mix(in oklch, var(--background-primary) 85%, var(--text-normal)); /*OPTIONAL*/
+  /*--table-cell-background: color-mix(in oklch, var(--background-primary) 95%, var(--text-normal));*/ /*OPTIONAL*/
 }
 
 .cm-strikethrough {
@@ -141,24 +142,25 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-line {
   position: relative;
-  padding-top: var(--p-spacing-empty-double);
-  padding-bottom: var(--p-spacing-empty);
+  padding-top: var(--lucy-line-pad-double);
+  padding-bottom: var(--lucy-line-pad);
   padding-left: 0;
   padding-right: 0;
 }
 
+/* Obsidian sets `* { box-sizing: border-box }`, so a `height` here would be the
+   total including padding — 8px against 24px of padding collapses the content box
+   to zero, which breaks click targeting and gutter alignment. Let line-height size
+   the box and let the padding add to it. */
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-blank-line,
-.markdown-source-view.mod-cm6 .cm-content .cm-line:empty,
-.markdown-source-view.mod-cm6 .cm-content .cm-line:has(br:only-child) {
-  min-height: 8px;
-  height: 8px;
+.markdown-source-view.mod-cm6 .cm-content .cm-line:has(> br:only-child) {
   line-height: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-blank-line::after,
-.markdown-source-view.mod-cm6 .cm-content .cm-line:has(br:only-child)::after {
+.markdown-source-view.mod-cm6 .cm-content .cm-line:has(> br:only-child)::after {
   content: "¬";
   color: rgba(100, 100, 100, 0.15);
   position: absolute;
@@ -210,14 +212,21 @@ body {
    H1 — EDITOR + RENDERED
    =================================================== */
 
+/* Typography goes on the inline span too; geometry must not. Vertical padding on
+   an inline element paints an overhang the line box never accounts for, so every
+   box below it is measured against the wrong height. */
 .cm-editor .cm-line .cm-header-1,
 .cm-editor .cm-line.HyperMD-header-1,
 .markdown-rendered h1 {
   font-size: 2.25em;
   font-weight: 700;
   line-height: 1.3;
-  padding: 24px 0 18px;
   color: var(--h1-text-color);
+}
+
+.cm-editor .cm-line.HyperMD-header-1,
+.markdown-rendered h1 {
+  padding: 24px 0 18px;
 }
 
 .cm-editor .cm-line.HyperMD-header-1::before,
@@ -259,13 +268,13 @@ body {
   font-size: 1.8em;
   font-weight: 600;
   line-height: 1.3;
-  padding: 22px 0 6px;
-  margin-bottom: 12px !important;
   color: var(--h2-text-color);
 }
 
 .cm-editor .cm-line.HyperMD-header-2,
 .markdown-rendered h2 {
+  padding: 22px 0 6px;
+  margin-bottom: 12px !important;
   border-bottom: 2px solid var(--h2-line-color);
 }
 
@@ -279,8 +288,12 @@ body {
   font-size: 1.6em;
   font-weight: 550;
   line-height: 1.3;
-  padding: 20px 0 6px;
   color: var(--h3-text-color);
+}
+
+.cm-editor .cm-line.HyperMD-header-3,
+.markdown-rendered h3 {
+  padding: 20px 0 6px;
 }
 
 /* ===================================================
@@ -293,8 +306,12 @@ body {
   font-size: 1.4em;
   font-weight: 550;
   line-height: 1.3;
-  padding: 18px 0 4px;
   color: var(--h4-text-color);
+}
+
+.cm-editor .cm-line.HyperMD-header-4,
+.markdown-rendered h4 {
+  padding: 18px 0 4px;
 }
 
 /* ===================================================
@@ -307,9 +324,13 @@ body {
   font-size: 1.15em;
   font-weight: 550;
   line-height: 1.3;
-  padding: 16px 0 4px;
   text-transform: none;
   color: var(--h5-text-color);
+}
+
+.cm-editor .cm-line.HyperMD-header-5,
+.markdown-rendered h5 {
+  padding: 16px 0 4px;
 }
 
 /* ===================================================
@@ -322,8 +343,12 @@ body {
   font-size: 1.1em;
   font-weight: 600;
   line-height: 1.3;
-  padding: 12px 0 4px;
   color: var(--h6-text-color);
+}
+
+.cm-editor .cm-line.HyperMD-header-6,
+.markdown-rendered h6 {
+  padding: 12px 0 4px;
 }
 
 /* Subtle heading markers */
@@ -342,28 +367,21 @@ body {
   color: var(--code-normal);
 }
 
-/* Obsidian's callout color token requires RGB channels, so style the default
-   note callout directly to keep it in sync with the active accent color. */
+/* Border, background and title color come from --callout-default above. Only the
+   embedded-table tokens need tinting, since Obsidian doesn't derive those. */
 .callout[data-callout="note"] {
-  --bases-table-header-background-hover: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --bases-table-header-background-hover: color-mix(in oklch, var(--color-accent) 10%, transparent);
   --bases-embed-border-color: color-mix(
-    in srgb,
+    in oklch,
     var(--color-accent) 25%,
     var(--background-primary) 50%
   );
   --bases-table-border-color: color-mix(
-    in srgb,
+    in oklch,
     var(--color-accent) 25%,
     var(--background-primary) 50%
   );
-  --table-border-color: color-mix(in srgb, var(--color-accent) 25%, var(--background-primary) 50%);
-  border-color: hsla(var(--color-accent-hsl), var(--callout-border-opacity));
-  background-color: hsla(var(--color-accent-hsl), 0.1);
-}
-
-.callout[data-callout="note"] > .callout-title,
-.callout[data-callout="note"] > .callout-title .callout-icon .svg-icon {
-  color: var(--color-accent);
+  --table-border-color: color-mix(in oklch, var(--color-accent) 25%, var(--background-primary) 50%);
 }
 
 /* ===================================================
@@ -385,9 +403,7 @@ body {
 }
 
 /* Unset 8px line height in tables */
-.table-editor .cm-s-obsidian.mod-cm6.is-live-preview .cm-line:has(br:only-child) {
-  min-height: unset;
-  height: unset;
+.table-editor .cm-s-obsidian.mod-cm6.is-live-preview .cm-line:has(> br:only-child) {
   line-height: unset;
   padding-top: 0;
   padding-bottom: 0;
@@ -476,7 +492,7 @@ body {
 .cm-comment-end {
   color: var(--list-marker-color) !important;
   font-size: 10px;
-  border-color: color-mix(in srgb, var(--text-highlight-bright-bg) 55%, var(--color-base-100)) !important;
+  border-color: color-mix(in oklch, var(--text-highlight-bright-bg) 55%, var(--color-base-100)) !important;
   padding: 9px 10px !important;
 }
 
