@@ -36,14 +36,14 @@ Lucy is designed to remove visual noise, leaving you with a calm, well-structure
 
 - **3-Level Bullet Cycling**: Bullets dynamically cycle their shape depending on indentation depth (Level 1: filled disc, Level 2: hollow circle, Level 3: filled square), looping every 3 levels.
 - **Optimal Spacing**: Generous line spacing and compact list items (`2px` vertical padding) strike the perfect balance between readability and density.
-- **Empty Line Indicators**: Blank lines are optimized to `8px` height to save vertical space, displaying a subtle caret guide (`¬`) on the left to indicate line breaks without cluttering your view.
+- **Empty Line Indicators**: Blank lines retain Obsidian's native editor height and display a subtle caret guide (`¬`) to indicate line breaks without disrupting cursor placement.
 
 ---
 
 ## 🚀 Obsidian Installation
 
 > [!NOTE]
-> Lucy requires Obsidian **v1.0.0** or higher.
+> Lucy requires Obsidian **v1.13.0** or higher.
 
 ### Option 1: Community Themes (Recommended)
 
