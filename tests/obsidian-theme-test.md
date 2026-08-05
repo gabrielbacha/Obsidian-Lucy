@@ -5,6 +5,7 @@ tags:
   - lucy-theme-test
 ---
 
+
 # H1 — Two rails around a long heading that can wrap at narrow editor widths
 
 Click this paragraph above and below the heading to verify that the cursor lands on the selected line.
@@ -24,6 +25,25 @@ Click this paragraph above and below the heading to verify that the cursor lands
 ## Paragraph and blank-line geometry
 
 First paragraph with **bold**, *italic*, ~~strikethrough~~, ==highlight==, `inline code`, and a [[Wiki link]].
+
+
+# Testing no line breaks
+
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+# H1 — Two rails around a long heading that can wrap at narrow editor widths
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+## H2 — Underline and original vertical rhythm
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+### H3 — Accent hierarchy
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+#### H4 — Accent hierarchy
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+##### H5 — Accent hierarchy
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+###### H6 — Accent hierarchy
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+Veniam eu eu ut id dolor dolore culpa nisi sit dolore. Sit reprehenderit aliqua exercitation pariatur aliquip ut dolore ipsum voluptate ex occaecat cupidatat pariatur qui id. Amet enim exercitation ea cillum sit duis. Quis amet tempor ullamco deserunt.
+
 
 
 Second paragraph after two native-height blank lines. Click each blank line and verify that the caret follows the click.
