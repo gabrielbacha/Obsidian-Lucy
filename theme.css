@@ -182,11 +182,8 @@ body {
   --list-bullet-transform: translateX(8px);
 }
 
-/* Move the ordered marker visually without changing its layout width. */
-.cm-editor .cm-formatting-list-ol {
-  position: relative;
-  inset-inline-start: -8px;
-}
+/* Ordered markers stay native: moving their real formatting span changes the
+   marker measurement Obsidian uses to calculate wrapped-line indentation. */
 
 /* Level-dependent bullet shapes (Editor / Live Preview)
    Cycles every 3 levels: disc → circle → square
