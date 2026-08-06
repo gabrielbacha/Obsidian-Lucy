@@ -5,7 +5,6 @@ tags:
   - lucy-theme-test
 ---
 
-
 # H1 — Two rails around a long heading that can wrap at narrow editor widths
 
 Click this paragraph above and below the heading to verify that the cursor lands on the selected line.
@@ -51,11 +50,11 @@ Second paragraph after two native-height blank lines. Click each blank line and 
 ## Unordered lists
 
 - Level one has enough text to wrap at a narrow editor width so its continuation begins exactly below the first text character.
-  - Level two uses a hollow circle and also contains enough text to wrap onto a continuation line.
-    - Level three uses a square marker and contains enough text to wrap onto another line.
-      - Level four cycles back to a disc.
-        - Level five cycles back to a hollow circle.
-          - Level six cycles back to a square.
+	- Level two uses a hollow circle and also contains enough text to wrap onto a continuation line.
+		- Level three uses a square marker and contains enough text to wrap onto another line.
+			- Level four cycles back to a disc.
+				- Level five cycles back to a hollow circle.
+					- Level six cycles back to a square.
 - Short level-one item.
 - [ ] Unfinished task item with wrapping text that verifies task-marker and continuation alignment.
 - [x] Finished task item.
@@ -63,10 +62,10 @@ Second paragraph after two native-height blank lines. Click each blank line and 
 ## Ordered lists
 
 1. First ordered item has enough text to wrap and verify that the continuation aligns with the first text character.
-2. Second ordered item.
-   1. Nested ordered item with enough text to wrap and verify alignment at the second nesting level.
-      1. Third nesting level.
-3. Third ordered item.
+	1. Second ordered item.
+	2. Nested ordered item with more than enough text to wrap and verify alignment at the second nesting level.
+		1. Third nesting level.
+		2. Third ordered item.
 
 ## Right-to-left lists
 
