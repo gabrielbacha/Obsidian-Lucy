@@ -19,7 +19,7 @@ Lucy is designed to remove visual noise, leaving you with a calm, well-structure
 
 ### 📐 Elegant Document Hierarchy
 
-- **Full-Viewport H1 Accent Lines**: Section headers (H1) feature top and bottom border accent lines. In Live Preview, these lines stretch edge-to-edge across the viewport for a structured, editorial feel.
+- **H1 Accent Lines**: Section headers (H1) feature top and bottom border accent lines that span the readable editor width for a structured, editorial feel.
 - **Bordered H2 Headers**: H2 elements include a clean underline border to clearly demarcate secondary sections.
 - **Refined Heading Palette**: Headings scale proportionally from H1 down to H6 with distinct color weights customized for both dark and light modes.
 

@@ -246,13 +246,12 @@ body {
   pointer-events: none;
 }
 
-/* Live Preview: full-viewport stretch */
+/* Live Preview: keep both rails within the editor line. Using 100vw here
+   overflows whenever the editor is offset by a sidebar or split pane. */
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-header-1::before,
 .markdown-source-view.mod-cm6 .cm-content .cm-line.HyperMD-header-1::after {
-  left: 50%;
-  right: auto;
-  width: 100vw;
-  transform: translateX(-50%);
+  inset-inline-start: 0;
+  inset-inline-end: 0;
 }
 
 /* Reading View: keep both rails within the readable content width. */
