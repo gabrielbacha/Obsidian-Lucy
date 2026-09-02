@@ -13,6 +13,8 @@ Click this paragraph above and below the heading to verify that the cursor lands
 
 ## H2 — Underline and original vertical rhythm
 
+# H1 — Rails stay outside the text after a heading and one blank line
+
 ### H3 — Accent hierarchy
 
 #### H4 — Accent hierarchy

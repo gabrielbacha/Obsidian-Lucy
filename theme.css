@@ -223,6 +223,16 @@ body {
   padding-block-end: 12px;
 }
 
+/* Obsidian removes the top padding from any heading that follows another
+   heading with one blank line between them. H1 rails rely on this space, so
+   preserve Lucy's H1 geometry in that context. */
+.markdown-source-view.mod-cm6.cm-s-obsidian
+  .cm-line.HyperMD-header
+  + .cm-line:not(.HyperMD-header):has(> br:only-child)
+  + .cm-line.HyperMD-header-1 {
+  padding-block-start: 24px;
+}
+
 .cm-editor .cm-line.HyperMD-header-1::before {
   top: 18px;
 }
