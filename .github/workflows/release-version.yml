@@ -45,6 +45,7 @@ jobs:
           release_name: ${{ github.ref_name }}
           draft: false
           prerelease: false
+          body: "More software, tools, and ideas: [gabrielbacha.com](https://www.gabrielbacha.com/?utm_source=github&utm_medium=referral&utm_campaign=obsidian_assets&utm_content=lucy_theme_release)"
       - name: Upload manifest.json
         id: upload-manifest
         uses: actions/upload-release-asset@v1

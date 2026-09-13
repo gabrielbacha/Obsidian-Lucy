@@ -2,6 +2,8 @@
 
 A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md), [Typora](https://typora.io), and [Zed](https://zed.dev).
 
+> Created by [Gabriel Bacha](https://www.gabrielbacha.com/?utm_source=obsidian_community&utm_medium=referral&utm_campaign=obsidian_assets&utm_content=lucy_theme_readme_header) · [Visit gabrielbacha.com](https://www.gabrielbacha.com/?utm_source=obsidian_community&utm_medium=referral&utm_campaign=obsidian_assets&utm_content=lucy_theme_readme_header) · [Request a feature](https://github.com/gabrielbacha/Obsidian-Lucy/issues/new?template=feature_request.yml)
+
 ![Lucy Theme Showcase](Screenshot-1.png)
 ![Lucy Theme Showcase](Screenshot-2.png)
 ![Lucy Theme Showcase](Screenshot-3.png)
