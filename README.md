@@ -2,7 +2,16 @@
 
 A clean, spacious, Notion-inspired theme designed for clear thinking in [Obsidian](https://obsidian.md), [Typora](https://typora.io), and [Zed](https://zed.dev).
 
-> Created by [Gabriel Bacha](https://www.gabrielbacha.com/?utm_source=obsidian_community&utm_medium=referral&utm_campaign=obsidian_assets&utm_content=lucy_theme_readme_header) · [Visit gabrielbacha.com](https://www.gabrielbacha.com/?utm_source=obsidian_community&utm_medium=referral&utm_campaign=obsidian_assets&utm_content=lucy_theme_readme_header) · [Request a feature](https://github.com/gabrielbacha/Obsidian-Lucy/issues/new?template=feature_request.yml)
+<div align="center">
+  <h3>Created by <a href="https://github.com/gabrielbacha">Gabriel Bacha</a></h3>
+  <p>
+    <a href="https://www.gabrielbacha.com/?utm_source=obsidian_community&amp;utm_medium=referral&amp;utm_campaign=obsidian_assets&amp;utm_content=lucy_theme_readme_header"><strong>Visit gabrielbacha.com</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://obsidian.md/plugins?search=Gabriel%20Bacha"><strong>Explore more Obsidian plugins</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/gabrielbacha/Obsidian-Lucy/issues/new?template=feature_request.yml"><strong>Request a feature</strong></a>
+  </p>
+</div>
 
 ![Lucy Theme Showcase](Screenshot-1.png)
 ![Lucy Theme Showcase](Screenshot-2.png)
@@ -112,3 +121,16 @@ If you encounter any issues, have feature requests, or want to contribute improv
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <h3>Created by <a href="https://github.com/gabrielbacha">Gabriel Bacha</a></h3>
+  <p>
+    <a href="https://www.gabrielbacha.com/?utm_source=obsidian_community&amp;utm_medium=referral&amp;utm_campaign=obsidian_assets&amp;utm_content=lucy_theme_readme_header"><strong>Visit gabrielbacha.com</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://obsidian.md/plugins?search=Gabriel%20Bacha"><strong>Explore more Obsidian plugins</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/gabrielbacha/Obsidian-Lucy/issues/new?template=feature_request.yml"><strong>Request a feature</strong></a>
+  </p>
+</div>
