@@ -21,7 +21,7 @@ Lucy exposes three supported customization tokens:
 ```css
 :root {
 	--lucy-accent: #7c5ce7;
-	--lucy-content-width: 700px;
+	--lucy-content-width: 1200px;
 	--lucy-font-size: 16px;
 }
 ```
@@ -41,4 +41,3 @@ The light and dark themes intentionally use different default accent colors. Ove
 ## Development test
 
 Open [`lucy-theme-test.md`](lucy-theme-test.md) in Typora to exercise the document elements covered by the theme. The port is developed against Typora 1.13.8 and uses current CSS features supported by modern Typora releases, including `:has()` and `color-mix()`.
-
