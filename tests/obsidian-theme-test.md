@@ -23,6 +23,17 @@ Click this paragraph above and below the heading to verify that the cursor lands
 
 ###### H6 — Accent hierarchy
 
+## Reading and Live Preview spacing parity
+
+Line 1  
+Line 2
+
+Line 3 after line break
+
+### Heading 3
+Line 1
+## H2
+
 ## Paragraph and blank-line geometry
 
 First paragraph with **bold**, *italic*, ~~strikethrough~~, ==highlight==, `inline code`, and a [[Wiki link]].
